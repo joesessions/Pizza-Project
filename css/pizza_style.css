@@ -1,0 +1,55 @@
+body {
+	background-image: url("../images/pizzaBackground.jpg");
+	 background-repeat: no-repeat;
+	 background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	font-size: 200px;
+	text-shadow: 5px 5px black;
+	color: red  ;
+    padding: 1px;
+    margin: 0
+}
+h3 {
+	text-align: center;
+	font-size: 100px;
+	text-shadow: 4px 4px black;
+	color: red  ;
+	padding: 1px;
+    margin: 2px
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 43px;
+}
+
+form {
+	column-count: 3;
+	font-size: 20px;
+	line-height: 60%;
+    padding: 25px;
+    margin: 25px;
+    background-color: red;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+  align-content: stretch;
+}
+
+#options {
+	font-family: "Verdana", Times, serif;
+}
