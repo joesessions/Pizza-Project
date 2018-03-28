@@ -22,16 +22,16 @@
 
 </head>
 
-<body>
+<body onload="Refresh()">
 	<h1>Pizza Power!!</h1>
-	<h3>Why not eat pizza? You gotta eat!</h3>
+	<h3>Why not eat pizza?</h3>
 <div class="flex-container">
   
 	<div id="sz">
 			<p>Size</p>
 		  <input type="radio" name="sz" onclick="Refresh()" id="personal"> Personal: $6 <br>
 		  <input type="radio" name="sz" onclick="Refresh()" id="medium"> Medium: $10 <br>
-		  <input type="radio" name="sz" onclick="Refresh()" id="large"> Large: $14 <br>
+		  <input type="radio" name="sz" onclick="Refresh()" id="large" checked> Large: $14 <br>
 		  <input type="radio" name="sz" onclick="Refresh()" id="exlarge"> XLarge: $16
 	 </div>
 	 <div id="crust">
@@ -63,24 +63,24 @@
        
 
 	  <div id="meats">
-	 		 <p id="meatsTitle">Meats</p>
+	 		 <p id="meatsTitle">Meats (1st one free!)</p>
 		  <input type="checkbox" name="meat" id="pepperoni" onclick="Refresh()"> Pepperoni
-		  <input type="checkbox" name="meat" id="sausage"> Sausage
-		  <input type="checkbox" name="meat" id="canadianBacon"> Canadian Bacon <br>
-		  <input type="checkbox" name="meat" id="groundBeef"> Ground Beef 
-	      <input type="checkbox" name="meat" id="anchovies"> Anchovies
-		  <input type="checkbox" name="meat" id="chicken"> Chicken
+		  <input type="checkbox" name="meat" id="sausage" onclick="Refresh()"> Sausage
+		  <input type="checkbox" name="meat" id="canadianBacon" onclick="Refresh()"> Canadian Bacon <br>
+		  <input type="checkbox" name="meat" id="groundBeef" onclick="Refresh()"> Ground Beef 
+	      <input type="checkbox" name="meat" id="anchovies" onclick="Refresh()"> Anchovies
+		  <input type="checkbox" name="meat" id="chicken" onclick="Refresh()"> Chicken
 	 </div>
 
 	 <div id="veggies"> 	
-	 	 <p id="veggiesTitle">Veggies</p>
-		  <input type="checkbox" name="veggies" id="tomatoes"> Tomatoes
-		  <input type="checkbox" name="veggies" id="onions"> Onions
-		  <input type="checkbox" name="veggies" id="greenPeppers"> Green Peppers 
-		  <input type="checkbox" name="veggies" id="mushrooms"> Mushrooms<br>
-          <input type="checkbox" name="veggies" id="pineapple"> Pineapples
-		  <input type="checkbox" name="veggies" id="spinach"> Spinach
-		  <input type="checkbox" name="veggies" id="jalapeno"> Jalapeno
+	 	 <p id="veggiesTitle">Veggies (1st one free!)</p>
+		  <input type="checkbox" name="veggies" id="tomatoes" onclick="Refresh()"> Tomatoes
+		  <input type="checkbox" name="veggies" id="onions" onclick="Refresh()"> Onions
+		  <input type="checkbox" name="veggies" id="greenPeppers" onclick="Refresh()"> Green Peppers 
+		  <input type="checkbox" name="veggies" id="mushrooms" onclick="Refresh()"> Mushrooms<br>
+          <input type="checkbox" name="veggies" id="pineapple" onclick="Refresh()"> Pineapples
+		  <input type="checkbox" name="veggies" id="spinach" onclick="Refresh()"> Spinach
+		  <input type="checkbox" name="veggies" id="jalapeno" onclick="Refresh()"> Jalapeno
 	 </div>
 	 </form>	 
 
@@ -90,35 +90,42 @@
 
 </div>
 
-<table>
+<table>    
+	
+	  <caption>Pizza Power! Receipt</caption>
+
 	<tr>
 		<th>Items</th>
 		<th>Price</th>
 	</tr>
 	<tr>
 		<td id="1_1"> </td>
-		<td id="1_2"> </td>
+		<td id="1_2" style="text-align: right"> </td>
 	</tr>
 	<tr>
 		<td id="2_1"> </td>
-		<td id="2_2"> </td>
+		<td id="2_2" style="text-align: right"> </td>
 	</tr>
 	<tr>
 		<td id="3_1"> </td>
-		<td id="3_2"> </td>
+		<td id="3_2" style="text-align: right"> </td>
 	</tr>
 	<tr>
 		<td id="4_1"> </td>
-		<td id="4_2"> </td>
+		<td id="4_2" style="text-align: right"> </td>
 	</tr>
 	<tr>
 		<td id="5_1"> </td>
-		<td id="5_2"> </td>
+		<td id="5_2" style="text-align: right"> </td>
 	</tr>
 	<tr>
 		<td id="6_1"> </td>
-		<td id="6_2"> </td>
-	</tr>					
+		<td id="6_2" style="text-align: right"> </td>
+	</tr>	
+	<tr>
+		<td> <b>TOTAL</b> </td>
+		<td id="7_2" style="text-align: right"> </td>
+	</tr>				
 </table>
 
 
@@ -220,38 +227,41 @@ console.log ("meattotal", meattotal, "meatlist", meatlist, "i", i)
 console.log ("meattotal", meattotal, "meatlist", meatlist.join(", "), "i", i)
 console.log ("price", price)
 	document.getElementById("1_1").innerHTML = tabledata[0];
-	document.getElementById("1_2").innerHTML = price[0];
+	document.getElementById("1_2").innerHTML = "$ " + price[0].toFixed(2);
 	document.getElementById("2_1").innerHTML = tabledata[1];
-	document.getElementById("2_2").innerHTML = price[1];
+	document.getElementById("2_2").innerHTML = "$ " + price[1].toFixed(2);
 	document.getElementById("3_1").innerHTML = tabledata[2];
-	document.getElementById("3_2").innerHTML = price[2];
+	document.getElementById("3_2").innerHTML = "$ " + price[2].toFixed(2);
 	document.getElementById("4_1").innerHTML = tabledata[3];
-	document.getElementById("4_2").innerHTML = price[3];
+	document.getElementById("4_2").innerHTML = "$ " + price[3].toFixed(2);
+
 console.log("length", tabledata.length, tabledata)
 console.log ("price", price)
 	if (tabledata.length > 4) {
 	document.getElementById("5_1").innerHTML = tabledata[4];
-	document.getElementById("5_2").innerHTML = price[4];
+	document.getElementById("5_2").innerHTML = "$ " + price[4].toFixed(2);
 }
 	if (tabledata.length > 5) {
 	document.getElementById("6_1").innerHTML = tabledata[5];
-	document.getElementById("6_2").innerHTML = price[5];
+	document.getElementById("6_2").innerHTML = "$ " + price[5].toFixed(2);
 }
 console.log ("price", price)
 
+
+function getSum(total, num) {
+    return total + num;
+}
+function total(item) {
+    document.getElementById("7_2").innerHTML = "$ " + price.reduce(getSum).toFixed(2);
+}
+total ();
 
 
 }  //Ends Refresh function.
    
 </script>	
-
-
-
-
-
 </body>
 </html>
-
 
 
 
