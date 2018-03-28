@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Pizza Power!</title>
+
+	<!-- Bootstrap core CSS -->
+<!-- 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<!-- Plugin CSS -->
+<!-- 	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+	Custom styles for this template
+	<link href="css/freelancer.min.css" rel="stylesheet"> -->
+	<link href="./css/pizza_style.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<h1>Pizza Power!!</h1>
+	<h3>Why not eat pizza? You gotta eat!</h3>
+<div class="flex-container">
+  
+	<div id="sz">
+			<p>Size</p>
+		  <input type="radio" name="sz" onclick="Refresh()" id="personal"> Personal: $6 <br>
+		  <input type="radio" name="sz" onclick="Refresh()" id="medium"> Medium: $10 <br>
+		  <input type="radio" name="sz" onclick="Refresh()" id="large"> Large: $14 <br>
+		  <input type="radio" name="sz" onclick="Refresh()" id="exlarge"> XLarge: $16
+	 </div>
+	 <div id="crust">
+     	   <p>Crust</p>
+		  <input type="radio" name="crust" onclick="Refresh()" id="plain" checked> Plain
+		  <input type="radio" name="crust" onclick="Refresh()" id="spicy"> Spicy<br>
+		  <input type="radio" name="crust" onclick="Refresh()" id="garlicbutter"> Garlic Butter <br>
+		  <input type="radio" name="crust" onclick="Refresh()" id="cheesestuffed"> Cheese Stuffed +$3<br>
+		  <input type="radio" name="crust" onclick="Refresh()" id="housespecial"> House Special
+	 </div>
+	 <div id="sauce">
+     	    <p>Sauce</p>
+		  <input type="radio" name="sauce" onclick="Refresh()" id="marinara" checked> Marinara Sauce <br>
+		  <input type="radio" name="sauce" onclick="Refresh()" id="white"> White Sauce<br>
+		  <input type="radio" name="sauce" onclick="Refresh()" id="barbeque"> Barbeque<br>
+		  <input type="radio" name="sauce" onclick="Refresh()" id="nosauce"> No Sauce <br>
+	 </div>  
+	 <div id="cheese">
+     	    <p>Cheese Level!</p>
+		  <input type="radio" name="cheese" onclick="Refresh()" id="regular" checked> Regular <br>
+		  <input type="radio" name="cheese" onclick="Refresh()" id="nocheese"> No Cheese<br>
+		  <input type="radio" name="cheese" onclick="Refresh()" id="extracheese"> Extra Cheese +$3<br>
+		
+	 </div>  
+
+
+</div>
+<div class="flex-container">
+       
+
+	  <div id="meats">
+	 		 <p id="meatsTitle">Meats</p>
+		  <input type="checkbox" name="meat" id="pepperoni" onclick="Refresh()"> Pepperoni
+		  <input type="checkbox" name="meat" id="sausage"> Sausage
+		  <input type="checkbox" name="meat" id="canadianBacon"> Canadian Bacon <br>
+		  <input type="checkbox" name="meat" id="groundBeef"> Ground Beef 
+	      <input type="checkbox" name="meat" id="anchovies"> Anchovies
+		  <input type="checkbox" name="meat" id="chicken"> Chicken
+	 </div>
+
+	 <div id="veggies"> 	
+	 	 <p id="veggiesTitle">Veggies</p>
+		  <input type="checkbox" name="veggies" id="tomatoes"> Tomatoes
+		  <input type="checkbox" name="veggies" id="onions"> Onions
+		  <input type="checkbox" name="veggies" id="greenPeppers"> Green Peppers 
+		  <input type="checkbox" name="veggies" id="mushrooms"> Mushrooms<br>
+          <input type="checkbox" name="veggies" id="pineapple"> Pineapples
+		  <input type="checkbox" name="veggies" id="spinach"> Spinach
+		  <input type="checkbox" name="veggies" id="jalapeno"> Jalapeno
+	 </div>
+	 </form>	 
+
+
+
+
+
+</div>
+
+<table>
+	<tr>
+		<th>Items</th>
+		<th>Price</th>
+	</tr>
+	<tr>
+		<td id="1_1"> </td>
+		<td id="1_2"> </td>
+	</tr>
+	<tr>
+		<td id="2_1"> </td>
+		<td id="2_2"> </td>
+	</tr>
+	<tr>
+		<td id="3_1"> </td>
+		<td id="3_2"> </td>
+	</tr>
+	<tr>
+		<td id="4_1"> </td>
+		<td id="4_2"> </td>
+	</tr>
+	<tr>
+		<td id="5_1"> </td>
+		<td id="5_2"> </td>
+	</tr>
+	<tr>
+		<td id="6_1"> </td>
+		<td id="6_2"> </td>
+	</tr>					
+</table>
+
+
+<script>
+
+
+function Refresh() {
+	var wantpersonal = document.getElementById("personal").checked;
+	var wantmedium = document.getElementById("medium").checked;	
+	var wantlarge = document.getElementById("large").checked;	
+	var wantexlarge = document.getElementById("exlarge").checked;	
+
+	var wantplain = document.getElementById("plain").checked;
+	var wantspicy = document.getElementById("spicy").checked;	
+	var wantgarlicbutter = document.getElementById("garlicbutter").checked;	
+	var wantcheesestuffed = document.getElementById("cheesestuffed").checked;		
+	var wanthousespecial = document.getElementById("housespecial").checked;
+
+	var wantmarinara = document.getElementById("marinara").checked;	
+	var wantwhite = document.getElementById("white").checked;	
+	var wantbarbeque = document.getElementById("barbeque").checked;		
+	var wantnosauce = document.getElementById("nosauce").checked;
+
+	var wantregular = document.getElementById("regular").checked;	
+	var wantnocheese = document.getElementById("nocheese").checked;	
+	var wantextracheese = document.getElementById("extracheese").checked;	
+
+ 	var wantpepperoni = document.getElementById("pepperoni").checked;
+ 	var wantsausage = document.getElementById("sausage").checked;
+ 	var wantcanadianbacon = document.getElementById("canadianBacon").checked;
+ 	var wantgroundbeef = document.getElementById("groundBeef").checked;
+ 	var wantanchovies = document.getElementById("anchovies").checked;
+ 	var wantchicken = document.getElementById("chicken").checked;
+
+ 	var wanttomatoes = document.getElementById("tomatoes").checked;
+ 	var wantonions = document.getElementById("onions").checked;
+ 	var wantgreenpeppers = document.getElementById("greenPeppers").checked;
+ 	var wantmushrooms = document.getElementById("mushrooms").checked;
+ 	var wantpineapple = document.getElementById("pineapple").checked;
+ 	var wantspinach = document.getElementById("spinach").checked;
+ 	var wantjalapeno = document.getElementById("jalapeno").checked;
+    
+	var meattotal = wantpepperoni + wantsausage + wantcanadianbacon + wantgroundbeef + wantanchovies + wantchicken;
+	var veggietotal = wanttomatoes + wantonions + wantgreenpeppers + wantmushrooms + wantpineapple + wantspinach + wantjalapeno ;
+	console.log(meattotal, veggietotal, "price:", price, wantpersonal);
+
+	var tabledata = [], price = [], i;
+	i=0;
+	if (wantpersonal) {tabledata[i] = "Personal pizza", price[i] = 6.00;} 
+	else if (wantmedium) {tabledata[i] = "Medium pizza", price[i] = 10.00;}
+	else if (wantlarge) {tabledata[i] = "Large pizza", price[i] = 14.00;}
+	else if (wantexlarge) {tabledata[i] = "Extra Large Pizza", price[i] = 16.00;}
+
+	i++;
+	if (wantplain) {tabledata[i] = "Plain Crust", price[i] = 0.00;}
+	else if (wantspicy) {tabledata[i] = "Spicy Crust", price[i] =0.00;}
+	else if (wantgarlicbutter) {tabledata[i] = "Garlic Butter Crust", price[i] =0.00;}
+	else if (wantcheesestuffed) {tabledata[i] = "Cheese Stuffed Crust", price[i] =3.00;}
+	else if (wanthousespecial) {tabledata[i] = "House Special Crust", price[i] =0.00;}
+	i++;
+	if (wantmarinara) {tabledata[i] = "Marinara Sauce", price[i] = 0.00;}
+	else if (wantwhite) {tabledata[i] = "White Sauce", price[i] =0.00;}
+	else if (wantbarbeque) {tabledata[i] = "Barbeque Sauce", price[i] =0.00;}
+	else if (wantnosauce) {tabledata[i] = "No Sauce", price[i] =0.00;}
+	i++;
+	if (wantregular) {tabledata[i] = "Cheese", price[i] = 0.00;}
+	else if (wantnocheese) {tabledata[i] = "No Cheese", price[i] =0.00;}
+	else if (wantextracheese) {tabledata[i] = "Extra Cheese", price[i] =3.00;}
+console.log("after radios", i, tabledata, price);	
+console.log("meatlist before", meatlist)
+	var meatlist = [];
+	var veggielist = [];
+
+	if (wantpepperoni) {meatlist.push("Pepperoni");} 
+	if (wantsausage) {meatlist.push("Sausage");}
+	if (wantcanadianbacon) {meatlist.push("Canadian Bacon");}
+	if (wantgroundbeef) {meatlist.push("Ground Beef");}
+	if (wantanchovies) {meatlist.push("Anchovies");}
+	if (wantchicken) {meatlist.push("Chicken");}
+
+
+	if (wanttomatoes) {veggielist.push("Tomatoes");} 
+	if (wantonions) {veggielist.push("Onions");}
+	if (wantgreenpeppers) {veggielist.push("Green Peppers");}
+	if (wantmushrooms) {veggielist.push("Mushrooms");}
+	if (wantpineapple) {veggielist.push("Pineapples");}
+	if (wantspinach) {veggielist.push("Spinach");}
+	if (wantjalapeno) {veggielist.push("Jalapeno");}
+
+console.log ("meattotal", meattotal, "meatlist", meatlist, "i", i)
+
+	if (meattotal == 1) {console.log ("I guess meattotal=1"), i++, tabledata[i] = meatlist, price[i] = 0.00;}
+	else if (meattotal > 1) {i++, tabledata[i] = meatlist.join(", "), price[i] = (meattotal-1);}
+
+console.log ("meattotal", meattotal, "meatlist", meatlist, "i", i)
+
+	if (veggietotal == 1) {i++, tabledata[i] = veggielist, price[i] = 0.00;}
+	else if (veggietotal > 1) {i++, tabledata[i] = veggielist.join(", "), price[i] = (veggietotal-1);}
+console.log ("meattotal", meattotal, "meatlist", meatlist.join(", "), "i", i)
+console.log ("price", price)
+	document.getElementById("1_1").innerHTML = tabledata[0];
+	document.getElementById("1_2").innerHTML = price[0];
+	document.getElementById("2_1").innerHTML = tabledata[1];
+	document.getElementById("2_2").innerHTML = price[1];
+	document.getElementById("3_1").innerHTML = tabledata[2];
+	document.getElementById("3_2").innerHTML = price[2];
+	document.getElementById("4_1").innerHTML = tabledata[3];
+	document.getElementById("4_2").innerHTML = price[3];
+console.log("length", tabledata.length, tabledata)
+console.log ("price", price)
+	if (tabledata.length > 4) {
+	document.getElementById("5_1").innerHTML = tabledata[4];
+	document.getElementById("5_2").innerHTML = price[4];
+}
+	if (tabledata.length > 5) {
+	document.getElementById("6_1").innerHTML = tabledata[5];
+	document.getElementById("6_2").innerHTML = price[5];
+}
+console.log ("price", price)
+
+
+
+}  //Ends Refresh function.
+   
+</script>	
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- if (meattotal == 1) {
+   	document.getElementById("meatsTitle").innerHTML = "Meats (first one free!)"
+    }
+   	else if (meattotal > 1) {
+   		document.getElementById("meatsTitle").innerHTML = "Meats $" + (meattotal - 1)
+   	}
+    if (veggietotal == 1) {
+   	document.getElementById("veggieTitle").innerHTML = "Veggies (first one free!)"
+    }
+   	else if (veggietotal > 1) {
+   		document.getElementById("veggieTitle").innerHTML = "Veggies $" + (veggietotal - 1)
+   	}
+
+    return szlatest = sz, crustlatest = crust, saucelatest = sauce, cheeselatest = cheese
+	
+} -->
+
+
+
+
+
+
+
+
+<!-- <p>
+The size you want is:  <div id="szoutput">  Personal </div>
+</p>
+<p>
+The crust you want is:  <div id="crustoutput">  Plain </div>
+</p>
+<p>
+The sauce you want is:  <div id="sauceoutput">  Marinara </div>
+</p>
+<p>
+Desired cheesiness level: <div id="cheeseoutput">  Regular </div>
+</p>
+ -->
+<!-- 
+
+<p>
+Meats:  <div id="meatoutput"> </div>
+Veggies: <div id="veggieoutput"> </div>
+</p>
+
+
+<button type="button" class="btn btn-outline-secondary btn-lg btn-block" onclick="Refresh()">Press when you've created the pizza of your dreams!</button>
+
+
+
+
+
+
+
+<body> -->
